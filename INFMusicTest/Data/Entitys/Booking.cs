@@ -18,5 +18,23 @@ namespace INFMusicTest.Data.Entitys
         public DateOnly TakenTill { get; set; } = new DateOnly();
 
         public string TakenFrom { get; set; }
+
+        public Booking(int id, DateOnly takenSince, DateOnly takenTill, string takenFrom)
+        {
+            BookingID = id;
+            TakenSince = takenSince;
+            TakenTill = takenTill;
+            TakenFrom = takenFrom;
+
+        }
+
+
+        public Booking(DateOnly takenSince, DateOnly takenTill, string takenFrom)
+        {
+            TakenSince = takenSince;
+            TakenTill = takenTill;
+            TakenFrom = takenFrom;
+
+        }
     }
 }

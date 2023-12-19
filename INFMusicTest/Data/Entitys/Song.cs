@@ -26,5 +26,24 @@ namespace INFMusicTest.Data.Entitys
         public int SongLength { get; set; }
 
 
+        public Song(int id, string title, int genreID, int authorID)
+        {
+            SongID = id;
+            Title = title;
+            GenreID = genreID;
+            AuthorID = authorID;
+            ReleaseDate = DateOnly.FromDateTime(DateTime.Now);
+            SongLength = 278;
+        }
+
+        public Song(string title, int genreID, int authorID)
+        {
+            Title = title;
+            GenreID = genreID;
+            AuthorID = authorID;
+            ReleaseDate = DateOnly.FromDateTime(DateTime.Now);
+            SongLength = 278;
+        }
+
     }
 }

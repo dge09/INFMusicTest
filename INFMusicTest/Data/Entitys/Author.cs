@@ -14,5 +14,21 @@ namespace INFMusicTest.Data.Entitys
 
         [MaxLength(200)]
         public string Name { get; set; }
+
+        List<Song> Songs = new List<Song>();
+
+
+        public Author(int id, string name)
+        {
+            AuthorID = id;
+            Name = name;
+        }
+
+        public Author(string name)
+        {
+            Name = name;
+        }
+
+
     }
 }

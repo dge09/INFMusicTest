@@ -4,6 +4,7 @@ using INFMusicTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace INFMusicTest.Migrations
 {
     [DbContext(typeof(MusicDBContext))]
-    partial class MusicDBContextModelSnapshot : ModelSnapshot
+    [Migration("20231219130608_Test")]
+    partial class Test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,23 +41,6 @@ namespace INFMusicTest.Migrations
                     b.HasKey("AuthorID");
 
                     b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            AuthorID = 10,
-                            Name = "BoyWithUke"
-                        },
-                        new
-                        {
-                            AuthorID = 11,
-                            Name = "21 Pilots"
-                        },
-                        new
-                        {
-                            AuthorID = 12,
-                            Name = "Marilyn Manson"
-                        });
                 });
 
             modelBuilder.Entity("INFMusicTest.Data.Entitys.Booking", b =>
@@ -78,22 +64,6 @@ namespace INFMusicTest.Migrations
                     b.HasKey("BookingID");
 
                     b.ToTable("Bookings");
-
-                    b.HasData(
-                        new
-                        {
-                            BookingID = 1,
-                            TakenFrom = "Dominik",
-                            TakenSince = new DateOnly(2023, 12, 19),
-                            TakenTill = new DateOnly(2023, 12, 21)
-                        },
-                        new
-                        {
-                            BookingID = 2,
-                            TakenFrom = "IdontKnow",
-                            TakenSince = new DateOnly(2023, 12, 19),
-                            TakenTill = new DateOnly(2023, 12, 27)
-                        });
                 });
 
             modelBuilder.Entity("INFMusicTest.Data.Entitys.Genre", b =>
@@ -112,23 +82,6 @@ namespace INFMusicTest.Migrations
                     b.HasKey("GenreID");
 
                     b.ToTable("Genres");
-
-                    b.HasData(
-                        new
-                        {
-                            GenreID = 1,
-                            Name = "Pop"
-                        },
-                        new
-                        {
-                            GenreID = 2,
-                            Name = "Soft Rock"
-                        },
-                        new
-                        {
-                            GenreID = 3,
-                            Name = "Hard Rock"
-                        });
                 });
 
             modelBuilder.Entity("INFMusicTest.Data.Entitys.Offer", b =>
@@ -148,26 +101,6 @@ namespace INFMusicTest.Migrations
                     b.HasKey("OfferID");
 
                     b.ToTable("Offers");
-
-                    b.HasData(
-                        new
-                        {
-                            OfferID = 1,
-                            Availability = true,
-                            SongID = 1
-                        },
-                        new
-                        {
-                            OfferID = 2,
-                            Availability = true,
-                            SongID = 2
-                        },
-                        new
-                        {
-                            OfferID = 3,
-                            Availability = false,
-                            SongID = 3
-                        });
                 });
 
             modelBuilder.Entity("INFMusicTest.Data.Entitys.Song", b =>
@@ -198,35 +131,6 @@ namespace INFMusicTest.Migrations
                     b.HasKey("SongID");
 
                     b.ToTable("Songs");
-
-                    b.HasData(
-                        new
-                        {
-                            SongID = 1,
-                            AuthorID = 10,
-                            GenreID = 1,
-                            ReleaseDate = new DateOnly(2023, 12, 19),
-                            SongLength = 278,
-                            Title = "Toxic"
-                        },
-                        new
-                        {
-                            SongID = 2,
-                            AuthorID = 11,
-                            GenreID = 2,
-                            ReleaseDate = new DateOnly(2023, 12, 19),
-                            SongLength = 278,
-                            Title = "Migrane"
-                        },
-                        new
-                        {
-                            SongID = 3,
-                            AuthorID = 12,
-                            GenreID = 3,
-                            ReleaseDate = new DateOnly(2023, 12, 19),
-                            SongLength = 278,
-                            Title = "Mobscene"
-                        });
                 });
 #pragma warning restore 612, 618
         }
