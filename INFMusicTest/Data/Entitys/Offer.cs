@@ -17,6 +17,7 @@ namespace INFMusicTest.Data.Entitys
 
         public bool Availability { get; set; }
 
+        // for easy default data addition
         public Offer(int offerid, int songID, bool availability)
         {
             OfferID = offerid;

@@ -25,7 +25,7 @@ namespace INFMusicTest.Data.Entitys
 
         public int SongLength { get; set; }
 
-
+        // for easy default data addition
         public Song(int id, string title, int genreID, int authorID)
         {
             SongID = id;

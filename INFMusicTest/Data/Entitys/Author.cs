@@ -17,7 +17,7 @@ namespace INFMusicTest.Data.Entitys
 
         List<Song> Songs = new List<Song>();
 
-
+        // for easy default data addition
         public Author(int id, string name)
         {
             AuthorID = id;

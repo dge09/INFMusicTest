@@ -13,6 +13,8 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("What you wanna do?");
                 Console.WriteLine("1) Add Author");
                 Console.WriteLine("2) Get all Authors");
+                Console.WriteLine("3) Add Song");
+                Console.WriteLine("4) Get all Songs");
 
                 Console.WriteLine();
                 string option = Console.ReadLine();
@@ -36,7 +38,29 @@ namespace MyApp // Note: actual namespace depends on the project name.
                         Console.WriteLine();
 
                         break;
+                    case 3:
+                        Console.WriteLine("Enter Song Title:");
+                        string title = Console.ReadLine();
+                        Console.WriteLine("Enter Song AuthorID:");
+                        int authorID = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter GenreID:");
+                        int genreID = int.Parse(Console.ReadLine());
 
+
+                        SongService.AddSong(title, genreID, authorID);
+                        break;
+                    case 4:
+                        Console.Clear();
+
+                        List<Song> songs = SongService.GetAllSongs();
+
+                        foreach (var item in songs)
+                        {
+                            Console.WriteLine(item.SongID + ") " + item.Title + ", Authorid: " + item.AuthorID + ", Genreid: " + item.GenreID);
+                        }
+                        Console.WriteLine();
+
+                        break;
 
                     default:
                         break;

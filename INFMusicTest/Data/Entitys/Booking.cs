@@ -19,13 +19,13 @@ namespace INFMusicTest.Data.Entitys
 
         public string TakenFrom { get; set; }
 
+        // for easy default data addition
         public Booking(int id, DateOnly takenSince, DateOnly takenTill, string takenFrom)
         {
             BookingID = id;
             TakenSince = takenSince;
             TakenTill = takenTill;
             TakenFrom = takenFrom;
-
         }
 
 

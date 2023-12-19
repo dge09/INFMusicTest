@@ -17,6 +17,8 @@ namespace INFMusicTest.Data.Entitys
 
         List<Song> Songs = new List<Song>();
 
+
+        // for easy default data addition
         public Genre(int id, string name)
         {
             GenreID = id;
